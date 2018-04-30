@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Demo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="resource/css/style.css" />
+	<script src="resource/js/angularJS/angular.min.js">  </script>
+</head>
+<body ng-app="myApp" ng-controller="MainController">
+	<div class="container">
+		<header>
+			<div class="left"><b><u><center>*** Psychology Walk-Through Test *** </center></u></b><br/><br/><br/>
+
+<img src="Ashwini.jpg"alt="http://AshwiniKumarRaj.com" style="width:150px;height:150px;"/><br/>
+<b>
+
+This is a psychological walk-throgh test based on you choose the options below. To get correct result, take following measures.
+</b>
+
+<ol>
+<ul>Choose the answer on the first go only.</ul>
+<ul>Don't take much time to answer.</ul>
+<ul>Never change or manipulate your choice.</ul>
+
+</ol>
+
+<b><u><center> * Imagine you are in a JUNGLE *</center></u></b> <br/><br/><br/>
+</div>
+			<div class="right">Total: 12 Questions</div>
+			<div class="clearfix"></div>
+		</header>
+		
+		<article id="q-list">
+			<form class="questionForm" id="q1" data-question="1">
+				<div ng-repeat="data in data">
+				<h3>{{data.cat}}</h3>
+				<div ng-repeat="cat in data.category">
+					<h3>{{cat.qus}}</h3>
+					<ul>
+						<li ng-repeat="optn in cat.options"><input name="{{$parent.$index+'-'+$parent.$parent.$index}}" type="radio" value="a" ng-click="checked($parent.$index,$parent.$parent.$index,optn.ans)" />{{optn.optn}}</li>
+						<!-- <li><input name="q1" type="radio" value="b" />&lt;header&gt;</li>
+						<li><input name="q1" type="radio" value="c" />&lt;heading&gt;</li>
+						<li><input name="q1" type="radio" value="d" />&lt;main&gt;</li> -->
+					</ul>
+				</div>
+				
+				<div>
+
+			</form>
+
+			<!-- <form class="questionForm" id="q2" data-question="2">
+				<h3>2. Which of the following is NOT a new feature of HTML5?</h3>
+				<ul>
+					<li><input name="q2" type="radio" value="a" />New Media Elements</li>
+					<li><input name="q2" type="radio" value="b" />Form Types</li>
+					<li><input name="q2" type="radio" value="c" />Local Storage</li>
+					<li><input name="q2" type="radio" value="d" />Cookies</li>
+				</ul>
+				
+			</form>
+			<form class="questionForm" id="q3" data-question="3">
+				<h3>3. Which element is the most appropriate to wrap around each blog post on a page?</h3>
+				<ul>
+					<li><input name="q3" type="radio" value="a" />&lt;section&gt;</li>
+					<li><input name="q3" type="radio" value="b" />&lt;post&gt;</li>
+					<li><input name="q3" type="radio" value="c" />&lt;article&gt;</li>
+					<li><input name="q3" type="radio" value="d" />&lt;main&gt;</li>
+				</ul>
+				
+			</form>
+			<form class="questionForm" id="q4" data-question="4">
+				<h3>4. Which HTML5 tag is used for sidebar content?</h3>
+				<ul>
+					<li><input name="q4" type="radio" value="a" />&lt;aside&gt;</li>
+					<li><input name="q4" type="radio" value="b" />&lt;sidebar&gt;</li>
+					<li><input name="q4" type="radio" value="c" />&lt;sub&gt;</li>
+					<li><input name="q4" type="radio" value="d" />&lt;side&gt;</li>
+				</ul>
+				
+			</form>
+			<form class="questionForm" id="q5" data-question="5">
+				<h3>5. Using canvas, which is used to clolor in regctangle?</h3>
+				<ul>
+					<li><input name="q5" type="radio" value="a" />strokeStyle</li>
+					<li><input name="q5" type="radio" value="b" />fillRect</li>
+					<li><input name="q5" type="radio" value="c" />rectFill</li>
+					<li><input name="q5" type="radio" value="d" />strokeFill</li>
+				</ul>
+				
+			</form>
+			<form class="questionForm" id="q6" data-question="6">
+				<h3>6. What is the full Form of HTML5?</h3>
+				<ul>
+					<li><input name="q6" type="radio" value="a" />Hyper Text Markup Language</li>
+					<li><input name="q6" type="radio" value="b" />Hyper Testimonial Markup Language</li>
+					<li><input name="q6" type="radio" value="c" />High Text Many Language</li>
+					<li><input name="q6" type="radio" value="d" />None</li>
+				</ul>
+				
+			</form> -->
+
+			<div id="results"></div>
+		</article>
+		<article id="sbt-btn"><a href="#"> <button id="submit"  ng-click="showResult()">Submit</button></a></article>
+		<article>
+		<div style="display: none;" id="result" ng-controller="resultController">
+			<div ng-repeat="data in data">
+				
+				<div ng-repeat="cat in data.category">
+					{{cat.answer}}
+				</div>
+				
+				<div>
+		</div>
+		</article>
+		<footer>
+			<div class="center"><a href="http://ashwinikumarraj.com" style="text-decoration: none; color: crimson;">http://ashwinikumarraj.com</a></div>
+			<div class="clearfix"></div>
+		</footer>
+	</div> <!-- end of container -->
+
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+//$("html").on("contextmenu",function(e){
+      // return false;
+  // });
+</script>
+	<script src="resource/js/basicController.js"></script>
+	<script type="text/javascript" src="resource/data/data.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Demo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="resource/css/style.css" />
+	<script src="resource/js/angularJS/angular.min.js">  </script>
+</head>
+<body ng-app="myApp" ng-controller="resultController">
+	<div class="container">
+		<header>
+			<div class="left">Demo Quiz</div>
+			<div class="right">Total: 6 Questions</div>
+			<div class="clearfix"></div>
+		</header>
+		
+		<article>
+			<form class="questionForm" id="q1" data-question="1">
+				<div ng-repeat="data in finaldata">
+				<h3>{{$index+1}}. {{data.qus}}</h3>
+				<ul>
+					<li ng-repeat="optn in data.options"><input name={{$parent.$index}} type="radio" value="a" />{{optn.optn}}</li>
+					<!-- <li><input name="q1" type="radio" value="b" />&lt;header&gt;</li>
+					<li><input name="q1" type="radio" value="c" />&lt;heading&gt;</li>
+					<li><input name="q1" type="radio" value="d" />&lt;main&gt;</li> -->
+				</ul>
+				{{data.answer}}
+				<div>
+
+			</form>
+
+			<!-- <form class="questionForm" id="q2" data-question="2">
+				<h3>2. Which of the following is NOT a new feature of HTML5?</h3>
+				<ul>
+					<li><input name="q2" type="radio" value="a" />New Media Elements</li>
+					<li><input name="q2" type="radio" value="b" />Form Types</li>
+					<li><input name="q2" type="radio" value="c" />Local Storage</li>
+					<li><input name="q2" type="radio" value="d" />Cookies</li>
+				</ul>
+				
+			</form>
+			<form class="questionForm" id="q3" data-question="3">
+				<h3>3. Which element is the most appropriate to wrap around each blog post on a page?</h3>
+				<ul>
+					<li><input name="q3" type="radio" value="a" />&lt;section&gt;</li>
+					<li><input name="q3" type="radio" value="b" />&lt;post&gt;</li>
+					<li><input name="q3" type="radio" value="c" />&lt;article&gt;</li>
+					<li><input name="q3" type="radio" value="d" />&lt;main&gt;</li>
+				</ul>
+				
+			</form>
+			<form class="questionForm" id="q4" data-question="4">
+				<h3>4. Which HTML5 tag is used for sidebar content?</h3>
+				<ul>
+					<li><input name="q4" type="radio" value="a" />&lt;aside&gt;</li>
+					<li><input name="q4" type="radio" value="b" />&lt;sidebar&gt;</li>
+					<li><input name="q4" type="radio" value="c" />&lt;sub&gt;</li>
+					<li><input name="q4" type="radio" value="d" />&lt;side&gt;</li>
+				</ul>
+				
+			</form>
+			<form class="questionForm" id="q5" data-question="5">
+				<h3>5. Using canvas, which is used to clolor in regctangle?</h3>
+				<ul>
+					<li><input name="q5" type="radio" value="a" />strokeStyle</li>
+					<li><input name="q5" type="radio" value="b" />fillRect</li>
+					<li><input name="q5" type="radio" value="c" />rectFill</li>
+					<li><input name="q5" type="radio" value="d" />strokeFill</li>
+				</ul>
+				
+			</form>
+			<form class="questionForm" id="q6" data-question="6">
+				<h3>6. What is the full Form of HTML5?</h3>
+				<ul>
+					<li><input name="q6" type="radio" value="a" />Hyper Text Markup Language</li>
+					<li><input name="q6" type="radio" value="b" />Hyper Testimonial Markup Language</li>
+					<li><input name="q6" type="radio" value="c" />High Text Many Language</li>
+					<li><input name="q6" type="radio" value="d" />None</li>
+				</ul>
+				
+			</form> -->
+
+			<div id="results"></div>
+		</article>
+		
+		
+		<footer>
+			<div class="center"><a href="http://www.demo.com" style="text-decoration: none; color: crimson;">www.demo.com</a></div>
+			<div class="clearfix"></div>
+		</footer>
+	</div> <!-- end of container -->
+
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+$("html").on("contextmenu",function(e){
+       return false;
+   });
+</script>
+	<script src="resource/js/basicController.js"></script>
+	<script type="text/javascript" src="resource/data/data.js"></script>
+</body>
+</html>
